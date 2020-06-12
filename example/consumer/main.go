@@ -15,7 +15,7 @@ const (
 )
 
 func main() {
-	connection := rmq.OpenConnection("consumer", "tcp", "localhost:6379", 2)
+	connection := rmq.OpenConnection("consumer", "tcp", "weivu:6379", 2)
 	queue := connection.OpenQueue("things")
 	queue.StartConsuming(unackedLimit, 500*time.Millisecond)
 	for i := 0; i < numConsumers; i++ {

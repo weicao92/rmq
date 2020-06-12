@@ -14,7 +14,7 @@ const (
 )
 
 func main() {
-	connection := rmq.OpenConnection("producer", "tcp", "localhost:6379", 2)
+	connection := rmq.OpenConnection("producer", "tcp", "weivu:6379", 2)
 	things := connection.OpenQueue("things")
 	balls := connection.OpenQueue("balls")
 	var before time.Time
